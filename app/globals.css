@@ -1,0 +1,78 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cal-sans@400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cal-sans: "Cal Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    /* GSAP ScrollSmoother-friendly: no native smooth-scroll fighting it */
+  }
+  /* Cal Sans + Inter are both used at Regular (400) — exactly as in Framer */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  ::selection {
+    @apply bg-orange text-cream;
+  }
+}
+
+@layer components {
+  .container-skayl {
+    @apply mx-auto w-full max-w-container px-5 md:px-12;
+  }
+  .display {
+    @apply font-display font-normal tracking-tightest;
+  }
+}
+
+/* The oversized, edge-bleeding section heading — masked fade like Framer's
+   "Cal Sans/H2 204" treatment. The text is clipped by a vertical gradient
+   so it dissolves toward the bottom edge of its frame. */
+.giant-heading {
+  font-family: var(--font-cal-sans);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: rgba(15, 5, 5, 0.82);
+  -webkit-mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 55%
+  );
+  mask-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 55%
+  );
+}
+.giant-heading--light {
+  color: rgba(245, 240, 225, 0.9);
+}
+
+/* per-character reveal — each glyph fades/blurs up into place */
+.char {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
