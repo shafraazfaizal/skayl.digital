@@ -12,9 +12,9 @@ export default function WorksPage() {
   return (
     <>
       <PageHero
-        eyebrow="Works"
-        title="Work we’re proud of."
-        subtitle="We’ve helped businesses and communities across industries achieve their goals. Here are some of our selected works."
+        eyebrow="Selected Work"
+        title="Built with intention. Delivered with precision."
+        subtitle="Every project on this page was designed, developed, and delivered entirely in-house — no outsourcing, no exceptions."
       />
       <Work heading={false} />
       <CTA />

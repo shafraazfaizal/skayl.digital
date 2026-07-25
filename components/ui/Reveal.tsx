@@ -6,7 +6,7 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: "div" | "section" | "span" | "li" | "figure";
+  as?: "div" | "section" | "span" | "li" | "figure" | "p";
 };
 
 // Scroll reveal mirroring the Framer appearEffect (opacity 0→1, translateY

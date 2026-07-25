@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
 import CorePrinciples from "@/components/sections/CorePrinciples";
 import Founders from "@/components/sections/Founders";
+import ToolsStack from "@/components/sections/ToolsStack";
 import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function AboutPage() {
       />
       <CorePrinciples />
       <Founders />
+      <ToolsStack />
       <CTA />
     </>
   );

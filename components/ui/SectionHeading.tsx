@@ -1,40 +1,34 @@
 import AnimatedText from "./AnimatedText";
+import GiantHeading from "./GiantHeading";
 import Reveal from "./Reveal";
 
 // Two heading treatments from Framer:
-//  - "giant": the oversized Cal Sans title that bleeds to the section edge and
-//    dissolves via a gradient mask (used for Recent Works, What we do, etc.)
+//  - "giant": the oversized Cal Sans title that fills the container width and
+//    dissolves via a gradient mask (Recent Works, What we do, etc.)
 //  - "standard": the centered Cal Sans/H2-64 heading (used for FAQ, etc.)
-// Both carry the parenthesised eyebrow and the letter-by-letter reveal.
 export default function SectionHeading({
   eyebrow,
   title,
+  sub,
   size = "giant",
   light = false,
   className = "",
 }: {
   eyebrow: string;
   title: string;
+  sub?: string;
   size?: "giant" | "standard";
   light?: boolean;
   className?: string;
 }) {
   return (
     <div className={`flex flex-col items-center text-center ${className}`}>
-      <Reveal as="span" className={`mb-3 text-sm ${light ? "text-cream/60" : "text-muted"}`}>
+      <Reveal as="span" className={`mb-4 text-sm ${light ? "text-cream/60" : "text-muted"}`}>
         ({eyebrow})
       </Reveal>
 
       {size === "giant" ? (
-        <div className="w-full overflow-hidden">
-          <AnimatedText
-            text={title}
-            as="h2"
-            className={`giant-heading ${
-              light ? "giant-heading--light" : ""
-            } block text-[18vw] leading-[0.82] sm:text-[15vw] md:text-[12vw] lg:text-[clamp(6rem,11vw,13rem)]`}
-          />
-        </div>
+        <GiantHeading text={title} light={light} />
       ) : (
         <AnimatedText
           text={title}
@@ -43,6 +37,15 @@ export default function SectionHeading({
             light ? "text-cream" : "text-ink"
           }`}
         />
+      )}
+
+      {sub && (
+        <Reveal
+          as="p"
+          className={`mt-4 max-w-md text-balance ${light ? "text-cream/60" : "text-muted"}`}
+        >
+          {sub}
+        </Reveal>
       )}
     </div>
   );

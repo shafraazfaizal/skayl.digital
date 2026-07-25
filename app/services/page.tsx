@@ -16,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Our Creative Services, Delivered."
-        subtitle="Ideas, stories, and strategies from the creative edge — covering design, development, and the tools that bring bold digital work to life."
+        title="Every discipline. One team."
+        subtitle="We don’t subcontract. Every service is built by us — so every output shares the same creative language."
       />
       <Services />
       <Ticker words={tickerWords} className="border-y border-line py-8" />

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import CaseStudy from "@/components/sections/CaseStudy";
+import ReelsShowcase from "@/components/sections/ReelsShowcase";
 import CTA from "@/components/sections/CTA";
 import { works } from "@/lib/content";
 import { caseStudies } from "@/lib/caseStudies";
@@ -52,7 +53,9 @@ export default async function WorkDetailPage({
             </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="display-h1 text-6xl md:text-7xl">{work.title}</h1>
+            <h1 className="display text-6xl leading-[0.95] md:text-7xl">
+              {work.title}
+            </h1>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-xl text-lg text-muted">
@@ -60,15 +63,28 @@ export default async function WorkDetailPage({
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="relative mt-12 aspect-[16/9] overflow-hidden rounded-3xl">
-              <Image
-                src={work.cover}
-                alt={work.title}
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority
-              />
+            <div className="relative mt-12 aspect-[16/9] overflow-hidden rounded-3xl bg-ink">
+              {work.heroVideo ? (
+                <video
+                  src={work.heroVideo}
+                  poster={work.heroPoster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={work.cover}
+                  alt={work.title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority
+                />
+              )}
             </div>
           </Reveal>
         </Container>
@@ -97,6 +113,8 @@ export default async function WorkDetailPage({
           </div>
         </Container>
       </section>
+
+      {slug === "zero-excuses" && <ReelsShowcase />}
 
       <CTA />
     </>

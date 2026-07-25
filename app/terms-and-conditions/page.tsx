@@ -15,15 +15,19 @@ export default function TermsPage() {
         },
         {
           heading: "Scope & deliverables",
-          body: "Deliverables, timelines, and pricing are defined per project before work begins. Changes to scope may affect timeline and cost, and will be agreed in writing.",
+          body: "Deliverables, timelines, and pricing are defined per project before work begins. Changes to scope may affect timeline and cost — all changes will be agreed in writing before implementation.",
         },
         {
           heading: "Payments",
-          body: "Payment terms are set out in each proposal. We don’t offer refunds on completed work, but we tell you upfront if we don’t think we’re the right fit.",
+          body: "Payment terms are set out in each proposal. We don’t offer refunds on completed work, but we are transparent upfront about whether we’re the right fit — before any payment is made.",
         },
         {
           heading: "Ownership",
-          body: "On full payment, ownership of final deliverables transfers to you. We may showcase completed work in our portfolio unless otherwise agreed.",
+          body: "On receipt of full payment, ownership of final deliverables transfers to you. We retain the right to showcase completed work in our portfolio unless otherwise agreed in writing.",
+        },
+        {
+          heading: "Creative Principle",
+          body: "All content produced by SKAYL — including video, photography, and social media content — is produced without the use of music. This applies to all projects and is a non-negotiable condition of engagement.",
         },
       ]}
     />

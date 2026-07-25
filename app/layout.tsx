@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cal_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -9,14 +9,22 @@ import SmoothScroll from "@/components/SmoothScroll";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+// Cal Sans — the display face used across Framer (single 400 weight).
+const calSans = Cal_Sans({
+  subsets: ["latin"],
+  variable: "--font-cal-sans",
+  weight: ["400"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SKAYL — Digital products for brands that mean it",
+  title: "SKAYL — We build what your brand deserves.",
   description:
-    "SKAYL is a creative house building websites, brands, and content for charities, startups, and growing businesses across the UK and Sri Lanka.",
+    "SKAYL is a UK & Sri Lanka creative studio building websites, brands, and content for charities, startups, and growing businesses — entirely in-house, every time.",
 };
 
 export default function RootLayout({
@@ -25,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${calSans.variable}`}>
       <body>
         <Cursor />
         <SmoothScroll>

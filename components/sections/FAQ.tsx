@@ -61,7 +61,7 @@ export default function FAQ() {
             size="standard"
           />
           <p className="text-muted">
-            Helping you understand our process and offerings at SKAYL.
+            Helping you understand our process and how SKAYL works.
           </p>
         </div>
 

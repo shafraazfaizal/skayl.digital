@@ -24,8 +24,8 @@ export default function ContactPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="max-w-md text-lg text-muted">
-                Tell us about your project and we’ll get back with a clear,
-                honest next step — no obligation, no sales pressure.
+                Tell us about your project and we’ll come back with a straight
+                answer and a clear next step — no obligation, no sales pressure.
               </p>
             </Reveal>
             <Reveal delay={0.15}>

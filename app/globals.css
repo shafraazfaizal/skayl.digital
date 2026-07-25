@@ -1,12 +1,8 @@
-@import url("https://api.fontshare.com/v2/css?f[]=cal-sans@400&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-cal-sans: "Cal Sans", system-ui, sans-serif;
-}
+/* --font-cal-sans and --font-inter are provided by next/font (see layout.tsx). */
 
 @layer base {
   html {
@@ -34,6 +30,13 @@
   .display {
     @apply font-display font-normal tracking-tightest;
   }
+  /* Display heading helpers — these render in Cal Sans (the display face).
+     Without these definitions the classes were inert and headings silently
+     fell back to Inter. */
+  .display-h1,
+  .display-h2 {
+    @apply font-display font-normal tracking-tightest;
+  }
 }
 
 /* The oversized, edge-bleeding section heading — masked fade like Framer's
@@ -42,22 +45,27 @@
 .giant-heading {
   font-family: var(--font-cal-sans);
   font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-  color: rgba(15, 5, 5, 0.82);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  /* small top/bottom padding so ascenders/descenders are never clipped */
+  padding: 0.08em 0 0.04em;
+  color: rgba(15, 5, 5, 0.32);
+  /* solid through the upper half, dissolving only toward the bottom */
   -webkit-mask-image: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 55%
+    to bottom,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0) 100%
   );
   mask-image: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 55%
+    to bottom,
+    #000 0%,
+    #000 48%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 .giant-heading--light {
-  color: rgba(245, 240, 225, 0.9);
+  color: rgba(245, 240, 225, 0.35);
 }
 
 /* per-character reveal — each glyph fades/blurs up into place */
@@ -65,6 +73,12 @@
   display: inline-block;
   white-space: pre;
   will-change: transform, opacity, filter;
+}
+
+/* subtle film grain overlay for panels */
+.skayl-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 @media (prefers-reduced-motion: reduce) {

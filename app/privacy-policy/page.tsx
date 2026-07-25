@@ -15,11 +15,15 @@ export default function PrivacyPolicyPage() {
         },
         {
           heading: "Information we collect",
-          body: "When you contact us we collect the details you provide — such as your name, email, and project information. We do not sell or share your personal data with third parties for marketing.",
+          body: "When you contact us we collect the details you provide — your name, email address, and project information. We do not sell or share your personal data with third parties for marketing purposes.",
         },
         {
           heading: "How we use it",
           body: "We use your information to respond to your enquiry, scope potential work, and deliver agreed services. We retain it only for as long as necessary for those purposes.",
+        },
+        {
+          heading: "Your rights",
+          body: "You have the right to access, correct, or request deletion of your personal data at any time. Email hello@skayl.digital and we’ll respond promptly.",
         },
         {
           heading: "Contact",

@@ -107,16 +107,18 @@ export default function CaseStudy({
           </div>
 
           {/* Problems */}
-          <div className="mt-16 border-t border-white/10">
-            {data.problems.map((p, i) => (
-              <Reveal key={i} delay={i * 0.04}>
-                <div className="flex items-start gap-4 border-b border-white/10 py-5">
-                  <span className="mt-0.5 text-lg text-[var(--accent)]">×</span>
-                  <span className="text-white/80">{p}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          {data.problems && data.problems.length > 0 && (
+            <div className="mt-16 border-t border-white/10">
+              {data.problems.map((p, i) => (
+                <Reveal key={i} delay={i * 0.04}>
+                  <div className="flex items-start gap-4 border-b border-white/10 py-5">
+                    <span className="mt-0.5 text-lg text-[var(--accent)]">×</span>
+                    <span className="text-white/80">{p}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          )}
         </Container>
       </section>
 
@@ -127,7 +129,7 @@ export default function CaseStudy({
             <div className="mb-14 flex flex-col gap-4">
               <span className="text-sm text-[var(--accent)]">What SKAYL Built</span>
               <h2 className="display-h2 text-3xl md:text-5xl">
-                Six systems, one platform.
+                {data.builtHeading}
               </h2>
             </div>
           </Reveal>
@@ -172,7 +174,7 @@ export default function CaseStudy({
             <div className="mb-14 flex flex-col gap-4">
               <span className="text-sm text-[var(--accent)]">The Outcomes</span>
               <h2 className="display-h2 text-3xl md:text-5xl">
-                What changed for JMA.
+                {data.outcomesHeading}
               </h2>
             </div>
           </Reveal>

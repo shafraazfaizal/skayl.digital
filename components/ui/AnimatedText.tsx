@@ -67,6 +67,10 @@ export default function AnimatedText({
     return <Tag className={className}>{text}</Tag>;
   }
 
+  // Split into words so a word never breaks across a line; each word's
+  // characters still reveal individually.
+  const words = text.split(" ");
+
   return (
     <MotionTag
       ref={ref as never}
@@ -76,10 +80,23 @@ export default function AnimatedText({
       animate={shown ? "show" : "hidden"}
       aria-label={text}
     >
-      {splitChars(text).map((c, i) => (
-        <motion.span key={i} variants={charVariant} className="char" aria-hidden>
-          {c}
-        </motion.span>
+      {words.map((word, wi) => (
+        <span
+          key={wi}
+          className="inline-block whitespace-nowrap"
+          aria-hidden
+        >
+          {splitChars(word).map((c, ci) => (
+            <motion.span key={ci} variants={charVariant} className="char">
+              {c}
+            </motion.span>
+          ))}
+          {wi < words.length - 1 && (
+            <motion.span variants={charVariant} className="char">
+              {" "}
+            </motion.span>
+          )}
+        </span>
       ))}
     </MotionTag>
   );

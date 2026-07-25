@@ -13,9 +13,11 @@ export type CaseStudy = {
   };
   stats: { value: string; label: string }[];
   challenge: { title: string; body: string };
-  problems: string[];
+  problems?: string[];
+  builtHeading: string;
   built: { no: string; title: string; body: string }[];
   quote: { text: string; author: string };
+  outcomesHeading: string;
   outcomes: string[];
   stack: { area: string; detail: string }[];
 };
@@ -53,6 +55,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       "No community archive — 22 years of projects and history existed only in documents and institutional memory.",
       "Brand inconsistency — no defined visual identity across social, email, and print.",
     ],
+    builtHeading: "Six systems, one platform.",
     built: [
       {
         no: "01",
@@ -89,6 +92,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       text: "It's professional — it actually works for our community. Our team can publish campaigns and news without any technical knowledge, and it reflects our Islamic values. Alhamdulillah, we're very pleased with what has been delivered.",
       author: "Secretary, Jaffna Muslim Association UK",
     },
+    outcomesHeading: "What changed for JMA.",
     outcomes: [
       "Online donations enabled — JMA can now accept donations 24/7 from anywhere in the world.",
       "Full editorial independence — the JMA team can publish campaigns, news, events, and gallery content without any developer involvement.",
@@ -104,6 +108,149 @@ export const caseStudies: Record<string, CaseStudy> = {
       { area: "Email", detail: "Resend (transactional email infrastructure)" },
       { area: "Hosting", detail: "Vercel (branch-based deployment · auto SSL)" },
       { area: "Design", detail: "Custom design system · Plus Jakarta Sans · Inter · Noto Serif Display" },
+    ],
+  },
+
+  autovive: {
+    slug: "autovive",
+    client: "AutoVive",
+    sector: "Automotive · Car Wash Startup · Sri Lanka",
+    deliveredBy: "SKAYL",
+    year: "2023 – 2024",
+    headline:
+      "A world-class brand for Sri Lanka's first fully digital mobile car wash.",
+    colours: {
+      primary: "#0A2B5C",
+      secondary: "#071B3A",
+      accent: "#00B4D8",
+      background: "#050D1A",
+    },
+    stats: [
+      { value: "360°", label: "Brand Ecosystem Delivered" },
+      { value: "6+", label: "Social Media Templates" },
+      { value: "1", label: "Pitch Deck Built to Raise Capital" },
+      { value: "100%", label: "Designed In-House" },
+    ],
+    challenge: {
+      title: "Making a utility business feel like a premium brand.",
+      body: "AutoVive launched with a bold idea — Sri Lanka's first fully digital, mobile car wash platform. No car wash. No friction. Just tap, shine, drive. The challenge was making a utility-based business feel like a premium brand — one credible enough to attract customers and raise expansion capital.",
+    },
+    builtHeading: "Everything the brand needed — in one system.",
+    built: [
+      {
+        no: "01",
+        title: "Logo & Visual Identity",
+        body: "Primary wordmark, icon variants, and a complete colour system built around deep navy and electric cyan — professional, modern, and immediately recognisable in the Sri Lankan market.",
+      },
+      {
+        no: "02",
+        title: "Brand System",
+        body: "Brand guidelines covering colour, typography, spacing, and usage rules across every touchpoint — so AutoVive could grow without the brand falling apart.",
+      },
+      {
+        no: "03",
+        title: "Uniform Design",
+        body: "Branded polo shirts and workwear for the AutoVive team — so every technician is a walking brand ambassador on every job.",
+      },
+      {
+        no: "04",
+        title: "Social Media Design",
+        body: "A full suite of social media templates and post designs across multiple formats — built around the brand system for consistent, on-brand content from day one.",
+      },
+      {
+        no: "05",
+        title: "Pitch Deck",
+        body: "A full investor pitch deck covering Why Now, Problem, Solution, Business Model, Market Size, Traction & Roadmap — designed to raise expansion capital and communicate the AutoVive vision clearly to investors.",
+      },
+    ],
+    quote: {
+      text: "The brand they built made AutoVive look like it had been operating for years. Every asset — from the uniforms to the pitch deck — told the same story. That consistency is what made investors take us seriously.",
+      author: "Founder, AutoVive",
+    },
+    outcomesHeading: "What AutoVive walked away with.",
+    outcomes: [
+      "Complete brand identity delivered — logo, colour system, and visual language fully documented and ready to scale.",
+      "Investor-ready pitch deck built — covering every stage of the business model and growth roadmap.",
+      "Uniform design delivered — branded workwear for the full AutoVive team.",
+      "Social media system live — content templates ready for immediate deployment.",
+      "360° brand ecosystem — every customer touchpoint speaking the same language.",
+    ],
+    stack: [
+      { area: "Design", detail: "Adobe Illustrator · Figma" },
+      { area: "Deck", detail: "PowerPoint · Figma" },
+      { area: "Output", detail: "Brand Guidelines PDF · Print-Ready Files" },
+    ],
+  },
+
+  "shajara-tea": {
+    slug: "shajara-tea",
+    client: "Shajara Tea",
+    sector: "F&B · Premium Ceylon Tea · Middle East Market",
+    deliveredBy: "SKAYL",
+    year: "2023 – 2024",
+    headline:
+      "A complete brand identity for a premium Ceylon tea brand rooted in Arabic elegance.",
+    colours: {
+      primary: "#2D5A27",
+      secondary: "#16300F",
+      accent: "#B8860B",
+      background: "#0E1F0A",
+    },
+    stats: [
+      { value: "100%", label: "Brand Kit Delivered In-House" },
+      { value: "3", label: "Product Photography Shoots Directed" },
+      { value: "8+", label: "Social Media Posts Designed" },
+      { value: "1", label: "Complete Packaging System Built" },
+    ],
+    challenge: {
+      title: "One cohesive identity — from logo to packaging to reels.",
+      body: "Shajara Tea launched with a clear positioning — authentic Sri Lankan tea, crafted for a Middle Eastern audience that values heritage, quality, and cultural resonance. The challenge was building a complete visual identity that honoured that positioning — from the logo to the packaging, from the product photography to the social content — all in one cohesive language.",
+    },
+    builtHeading: "One brand language, every touchpoint.",
+    built: [
+      {
+        no: "01",
+        title: "Logo & Visual Identity",
+        body: "An elegant Arabic-inspired logomark and wordmark built around the Shajara brand name (meaning \"tree\" in Arabic) — rooted in premium tea heritage and designed to stand out on shelf and screen alike.",
+      },
+      {
+        no: "02",
+        title: "Packaging Design",
+        body: "Complete printable packaging system — product labels, tea boxes, and branded inserts — designed to communicate premium quality and Sri Lankan provenance to a Middle Eastern audience.",
+      },
+      {
+        no: "03",
+        title: "Product Photography Direction",
+        body: "Art direction and styling briefs for product photography sessions — positioning Shajara against luxury tea brands with editorial-level image standards.",
+      },
+      {
+        no: "04",
+        title: "Social Media Content",
+        body: "A full suite of social media posts across multiple formats and content types — brand announcements, product showcases, engagement content, and launch campaign assets.",
+      },
+      {
+        no: "05",
+        title: "Reels Production",
+        body: "Engaging short-form video content for Instagram and TikTok — storytelling-led, cinematic visuals, purposeful pacing, and professional sound design. No music. Authentic ambient sound and voiceover direction throughout.",
+      },
+    ],
+    quote: {
+      text: "Every element they delivered felt like it was made for exactly the customer we were trying to reach. The packaging, the posts, the reels — it all speaks Arabic luxury and Sri Lankan authenticity at the same time. That's not easy to achieve.",
+      author: "Founder, Shajara Tea",
+    },
+    outcomesHeading: "What Shajara walked away with.",
+    outcomes: [
+      "Complete brand identity — logo, colour system, and visual language delivered and documented.",
+      "Full packaging system — print-ready files for labels, boxes, and inserts.",
+      "Product photography direction — editorial brief and art direction delivered.",
+      "Social media system live — content templates and post designs ready for immediate deployment.",
+      "Reels produced — short-form video content with strong organic reach on launch.",
+      "100% in-house — every element built by the same creative team.",
+    ],
+    stack: [
+      { area: "Design", detail: "Adobe Illustrator · Photoshop · Figma" },
+      { area: "Video", detail: "CapCut Pro · Cinematic ambient sound direction" },
+      { area: "Output", detail: "Print-Ready Files · Brand Guidelines PDF" },
     ],
   },
 };

@@ -57,13 +57,13 @@ export default function ContactForm() {
           />
         </label>
         <label className="flex flex-col gap-2 text-sm">
-          <span className="text-muted">Project description</span>
+          <span className="text-muted">Tell us about your project</span>
           <textarea
             name="message"
             rows={5}
             required
             className="resize-none rounded-xl border border-line bg-transparent px-4 py-3 outline-none focus:border-ink"
-            placeholder="Tell us what you’re building…"
+            placeholder="What are you building and when do you need it?"
           />
         </label>
 
@@ -75,7 +75,7 @@ export default function ContactForm() {
           {status === "sending"
             ? "Sending…"
             : status === "sent"
-              ? "Sent — thank you"
+              ? "Sent — we’ll be in touch إن شاء الله"
               : "Send it →"}
         </button>
 
@@ -84,7 +84,8 @@ export default function ContactForm() {
         )}
         {status === "sent" && (
           <p className="text-sm text-muted">
-            We’ll be in touch shortly. You can also email hello@skayl.digital.
+            We’ll be in touch shortly. You can also reach us directly at
+            hello@skayl.digital.
           </p>
         )}
       </form>

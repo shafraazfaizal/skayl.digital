@@ -7,3 +7,8 @@
 npm-debug.log*
 .env*
 next-env.d.ts
+
+# Raw source videos (huge) — only the web-optimized versions in web/ are committed
+/public/work/zeroexcuses/*.mov
+/public/work/zeroexcuses/*.mp4
+!/public/work/zeroexcuses/web/

@@ -19,23 +19,20 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-32">
       <Container>
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <motion.span
-            custom={0}
-            variants={fade}
-            initial="hidden"
-            animate="show"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-4 py-1.5 text-sm text-muted"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-orange" />
-            Available for new projects
-          </motion.span>
-
-          <AnimatedText
-            as="h1"
-            play="mount"
-            text="Digital products for brands that mean it."
-            className="display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-[5.5rem]"
-          />
+          <h1 className="display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            <AnimatedText
+              as="span"
+              play="mount"
+              text="We don’t work for you."
+              className="block text-ink/35"
+            />
+            <AnimatedText
+              as="span"
+              play="mount"
+              text="We work with you."
+              className="block text-ink"
+            />
+          </h1>
 
           <motion.p
             custom={1}
@@ -44,9 +41,9 @@ export default function Hero() {
             animate="show"
             className="mt-6 max-w-xl text-balance text-lg text-muted"
           >
-            SKAYL is a creative house building websites, brands, and content for
-            charities, startups, and growing businesses across the UK and Sri
-            Lanka.
+            One embedded team handling development, design, branding,
+            photography, and content. No handoffs, no freelancers, no
+            coordination overhead.
           </motion.p>
 
           <motion.div

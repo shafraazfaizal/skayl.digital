@@ -10,7 +10,7 @@ export default function NotFound() {
             404
           </span>
           <h1 className="display-h2 text-4xl md:text-5xl">
-            This page took a different path.
+            You’ve gone somewhere we haven’t built yet.
           </h1>
           <p className="max-w-md text-muted">
             The page you’re looking for doesn’t exist or has moved. Let’s get
@@ -20,7 +20,7 @@ export default function NotFound() {
             href="/"
             className="rounded-full bg-ink px-6 py-3 text-sm font-medium text-cream transition-transform hover:scale-[1.03]"
           >
-            Back home →
+            Back to home →
           </Link>
         </div>
       </Container>
