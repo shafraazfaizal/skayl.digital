@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "SKAYL — We build what your brand deserves.",
   description:
     "SKAYL is a UK & Sri Lanka creative studio building websites, brands, and content for charities, startups, and growing businesses — entirely in-house, every time.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
